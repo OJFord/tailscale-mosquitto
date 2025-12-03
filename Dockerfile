@@ -9,4 +9,4 @@ RUN apk update && apk add bash && rm -rf /var/cache/apk/*
 COPY start.sh /app/start.sh
 ENTRYPOINT ["/app/start.sh"]
 COPY mosquitto.conf /app/mosquitto.conf
-CMD ["--config=/app/mosquitto.conf"]
+CMD ["-c", "/app/mosquitto.conf"]
