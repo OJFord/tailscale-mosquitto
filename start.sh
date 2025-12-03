@@ -9,5 +9,5 @@ tailscale up --auth-key="$TAILSCALE_AUTHKEY" --hostname=mosquitto --advertise-ta
 >&2 echo 'Starting mosquitto'
 set -o monitor
 mosquitto "$@" &
-tailscale serve --service=svc:mqtt-broker 1883
+tailscale serve --service=svc:mqtt-broker --tcp=1883 1883
 fg
