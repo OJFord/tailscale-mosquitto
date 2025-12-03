@@ -5,6 +5,7 @@ COPY --from=docker.io/tailscale/tailscale:stable /usr/local/bin/tailscale /usr/l
 COPY --from=docker.io/tailscale/tailscale:stable /usr/local/bin/tailscaled /usr/local/bin/
 RUN mkdir -p /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
 
+RUN apk update && apk add bash && rm -rf /var/cache/apk/*
 COPY start.sh /app/start.sh
 ENTRYPOINT ["/app/start.sh"]
 COPY mosquitto.conf /app/mosquitto.conf
