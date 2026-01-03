@@ -8,5 +8,7 @@ RUN mkdir -p /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
 RUN apk update && apk add bash && rm -rf /var/cache/apk/*
 COPY start.sh /app/start.sh
 ENTRYPOINT ["/app/start.sh"]
+
 COPY mosquitto.conf /app/mosquitto.conf
+COPY --chown=mosquitto users.txt /app/users.txt
 CMD ["-c", "/app/mosquitto.conf"]
