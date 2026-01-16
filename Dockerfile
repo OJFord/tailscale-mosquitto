@@ -1,4 +1,4 @@
-FROM docker.io/library/eclipse-mosquitto:2.0.21
+FROM docker.io/library/eclipse-mosquitto:2.0.22
 
 RUN apk update && apk add ca-certificates iptables ip6tables && rm -rf /var/cache/apk/*
 COPY --from=ghcr.io/tailscale/tailscale:v1.92.4 /usr/local/bin/tailscale /usr/local/bin/
