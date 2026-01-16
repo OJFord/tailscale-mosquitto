@@ -1,6 +1,6 @@
 # Can't just use COPY --from=, dependabot won't update it
 # https://github.com/dependabot/dependabot-core/issues/6700
-FROM ghcr.io/tailscale/tailscale:v1.92.4 AS tailscale
+FROM ghcr.io/tailscale/tailscale:v1.92.5 AS tailscale
 FROM docker.io/library/eclipse-mosquitto:2.0.21
 
 RUN apk update && apk add ca-certificates iptables ip6tables && rm -rf /var/cache/apk/*
