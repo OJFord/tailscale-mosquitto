@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "services": {
+    "svc:mqtt-broker": {
+      "endpoints": {
+        "tcp:1883": "tcp://127.0.0.1:1883"
+      },
+      "advertised": true
+    }
+  }
+}
