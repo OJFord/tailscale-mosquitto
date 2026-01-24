@@ -5,5 +5,5 @@ set -eEuo pipefail
 set -o monitor
 containerboot &
 
->&2 echo 'Starting mosquitto'
-mosquitto "$@"
+>&2 echo "Starting '$@'"
+su -s /bin/sh mosquitto -c "$1" -- "${@:1}"
