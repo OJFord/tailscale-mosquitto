@@ -3,7 +3,7 @@
 FROM ghcr.io/tailscale/tailscale:v1.92.5 AS tailscale
 FROM docker.io/library/eclipse-mosquitto:2.0.22
 
-RUN apk update && apk add ca-certificates iptables ip6tables && rm -rf /var/cache/apk/*
+RUN apk update && apk add ca-certificates iptables-legacy  && rm -rf /var/cache/apk/*
 COPY --from=tailscale /usr/local/bin/containerboot /usr/local/bin/
 COPY --from=tailscale /usr/local/bin/tailscale /usr/local/bin/
 COPY --from=tailscale /usr/local/bin/tailscaled /usr/local/bin/
