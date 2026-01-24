@@ -6,4 +6,6 @@ set -o monitor
 containerboot &
 
 >&2 echo "Starting '$@'"
-su -s /bin/sh mosquitto -c "$1" -- "${@:1}"
+su -s /bin/sh mosquitto -c "$1" -- "${@:1}" &
+
+wait -n
