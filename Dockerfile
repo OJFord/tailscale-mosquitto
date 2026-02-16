@@ -1,7 +1,7 @@
 # Can't just use COPY --from=, dependabot won't update it
 # https://github.com/dependabot/dependabot-core/issues/6700
 FROM docker.io/library/eclipse-mosquitto:2.0.22 AS mosquitto
-FROM ghcr.io/tailscale/tailscale:v1.92.5
+FROM ghcr.io/tailscale/tailscale:v1.94.2
 
 RUN apk update && apk add bash && rm -rf /var/cache/apk/*
 COPY start.sh /app/
